@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -u
+set -e
+
+readonly SCRIPT_DIR=$(cd `dirname "$0"`; pwd)
+readonly BLOG_HOME=$(cd "$SCRIPT_DIR/.."; pwd)
+readonly GEM_EXEC_DIR=`gem env | grep 'EXECUTABLE DIRECTORY' | cut -d ':' -f 2`
+readonly JEKYLL_CMD="$GEM_EXEC_DIR/jekyll"
+
+cd $BLOG_HOME

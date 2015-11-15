@@ -10,8 +10,8 @@ title: Unstable Build
 email: lucastorri@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Just a place to record my learnings, nothing fancy.
-baseurl: "/unstable-build.s3.amazonaws.com" # the subpath of your site, e.g. /blog
-url: "https://s3.amazonaws.com/unstable-build.s3.amazonaws.com" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://unstable-build.s3.amazonaws.com.s3-website-us-east-1.amazonaws.com" # the base hostname & protocol for your site
 twitter_username: lucastorri
 github_username:  lucastorri
 

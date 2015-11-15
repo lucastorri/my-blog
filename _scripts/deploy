@@ -6,3 +6,6 @@ source "`dirname "$0"`/_settings"
 
 $JEKYLL_CMD build
 $GEM_EXEC_DIR/s3_website push
+
+readonly blog_url=`ruby -e "require 'yaml'; print YAML.load(File.open('_config.yml'))['url']"`
+echo "New version deployed to $blog_url"

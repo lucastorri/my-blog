@@ -1,5 +1,7 @@
 #!/bin/bash
 
+gem install s3_website jekyll
+
 source "`dirname "$0"`/_settings"
 
 $JEKYLL_CMD build

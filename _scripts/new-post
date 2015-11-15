@@ -1,0 +1,23 @@
+#!/bin/bash
+
+source "`dirname "$0"`/_settings"
+
+readonly post_title="$1"
+
+slugify() {
+    local title="$1"
+    
+    echo "$title" \
+        | iconv -f 'utf8' -t 'ascii//TRANSLIT//IGNORE' \
+        | tr -d "~'" \
+        | tr '[A-Z]' '[a-z]' \
+        | tr -cs 'a-zA-Z0-9\n' '-'
+}
+
+echo "---
+layout: post
+title: \"$post_title\"
+date: `date +'%F %T %z'`
+categories: update
+---
+" > "_posts/$(date +'%F')-$(slugify "$post_title").markdown"

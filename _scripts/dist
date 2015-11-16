@@ -4,5 +4,5 @@ source "`dirname "$0"`/_settings"
 
 readonly TIMESTAMP=`date "+%Y%m%d%H%M%S"`
 
-$JEKYLL_CMD build
+jekyll build
 tar -zcvf "dist-$TIMESTAMP.tar.gz" _site/

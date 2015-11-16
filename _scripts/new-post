@@ -9,9 +9,9 @@ slugify() {
     
     echo "$title" \
         | iconv -f 'utf8' -t 'ascii//TRANSLIT//IGNORE' \
-        | tr -d "~'" \
-        | tr '[A-Z]' '[a-z]' \
-        | tr -cs 'a-zA-Z0-9\n' '-'
+        | tr '[:upper:]' '[:lower:]' \
+        | tr -cd "[:alnum:][:space:]" \
+        | tr -cs '[:alnum:]\n' '-'
 }
 
 echo "---

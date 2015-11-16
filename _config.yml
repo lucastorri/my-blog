@@ -18,7 +18,10 @@ github_username:  lucastorri
 # Build settings
 markdown: kramdown
 
-# Outputting
+# Input
+exclude: [vendor]
+
+# Output
 permalink: /:year/:month/:day/:title.html
 
 # Index

@@ -1,0 +1,74 @@
+#!/bin/bash
+
+source "`dirname "$0"`/_settings"
+
+readonly RSA_KEY_PATH="$HOME/.ssh/id_rsa"
+
+readonly ENV_FILE="$SCRIPT_DIR/envs.enc"
+readonly ENV_FILE_DECRYPTED="$ENV_FILE.plain"
+
+
+remove-decrypted() {
+    rm -r "$ENV_FILE_DECRYPTED"
+}
+
+private-key() {
+    openssl rsa -in "$RSA_KEY_PATH" -outform pem
+}
+
+public-key() {
+    openssl rsa -in "$RSA_KEY_PATH" -pubout -outform pem
+}
+
+encrypt() {
+    openssl rsautl -encrypt -pubin -inkey <(public-key) -in "$ENV_FILE_DECRYPTED" -out "$ENV_FILE"
+}
+
+decrypt() {
+    openssl rsautl -decrypt -inkey <(private-key) -in "$ENV_FILE" -out "$ENV_FILE_DECRYPTED"
+}
+
+decrypted-file-hash() {
+    md5 -q "$ENV_FILE_DECRYPTED"
+}
+
+update-travis-envs() {
+    local encrypt_flags="--override"
+    local env_var
+    # http://mywiki.wooledge.org/BashFAQ/001
+    while IFS= read -r env_var || [[ -n $env_var ]]; do
+        if [ ! -z "$env_var" ]; then
+            $GEM_EXEC_DIR/travis encrypt "$env_var" --add $encrypt_flags
+            encrypt_flags=""
+        fi
+    done < "$ENV_FILE_DECRYPTED"
+}
+
+with-decrypted-file() {
+    local action="$1 '$ENV_FILE_DECRYPTED'"
+
+    trap remove-decrypted EXIT
+
+    if [ -f "$ENV_FILE" ]; then
+        decrypt
+    else
+        touch "$ENV_FILE_DECRYPTED"
+    fi
+
+    local previous_hash=`decrypted-file-hash`
+    eval "$action"
+
+    if [ decrypted-file-hash != "$previous_hash" ]; then
+        update-travis-envs
+        encrypt
+    fi
+}
+
+edit-file() {
+    local file="$1"
+
+    ${EDITOR:-vim} "$file"
+}
+
+
+with-decrypted-file edit-file

@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Hello Again!"
-date:   2015-11-15 01:03:17 +0100
+title: "Hello Again!"
+date: 2015-11-15 01:03:17 +0100
 categories: hello
 ---
 Hey,

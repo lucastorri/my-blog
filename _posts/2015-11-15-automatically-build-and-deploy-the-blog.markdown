@@ -16,9 +16,15 @@ There are a few scripts I created that conduct the process, and that help me cre
 
 In order to publish files to S3, *s3_website* expects, of course, valid AWS credentials. After creating a new IAM user, with access rights to S3 only, I modified the corresponding YAML file to look for two environment variables: `S3_KEY` and `S3_SECRET`. Since all my blog informations are in the open, I searched for a way to securely pass the credentials to the build process, and learned that Travis' command line client allows [encrypting](http://docs.travis-ci.com/user/encryption-keys/) variables using a public key created for your repository. You can do that as follows:
 
-{% highlight bash %}
+{% highlight shell %}
 travis encrypt S3_KEY=blah --add
 travis encrypt S3_SECRET=bleh --add
+{% endhighlight %}
+
+Once you created/modified the site configuration, you'll need to run, just once, the following:
+
+{% highlight shell %}
+s3_website cfg apply
 {% endhighlight %}
 
 

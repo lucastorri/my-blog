@@ -4,9 +4,9 @@ source "`dirname "$0"`/_settings"
 
 bundle install
 
-jekyll build
-s3_website push
-jekyll algolia push
+gem-exec jekyll build
+gem-exec s3_website push
+gem-exec jekyll algolia push
 
 readonly blog_url=`ruby -e "require 'yaml'; print YAML.load(File.open('_config.yml'))['url']"`
 echo "New version deployed to $blog_url"

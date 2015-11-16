@@ -6,4 +6,8 @@ set -e
 readonly SCRIPT_DIR=$(cd `dirname "$0"`; pwd)
 readonly BLOG_HOME=$(cd "$SCRIPT_DIR/.."; pwd)
 
+gem-exec() {
+    bundle exec "$@"
+}
+
 cd $BLOG_HOME

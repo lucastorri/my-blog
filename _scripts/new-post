@@ -14,10 +14,15 @@ slugify() {
         | tr -cs '[:alnum:]\n' '-'
 }
 
+readonly new_post_file="_posts/$(date +'%F')-$(slugify "$post_title").markdown"
+
 echo "---
 layout: post
 title: \"$post_title\"
 date: `date +'%F %T %z'`
 categories: update
 ---
-" > "_posts/$(date +'%F')-$(slugify "$post_title").markdown"
+" > "$new_post_file"
+
+echo $new_post_file
+

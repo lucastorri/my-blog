@@ -3,6 +3,7 @@
 source "`dirname "$0"`/_settings"
 
 readonly post_title="$1"
+readonly new_post_dir="_drafts"
 
 slugify() {
     local title="$1"
@@ -14,7 +15,7 @@ slugify() {
         | tr -cs '[:alnum:]\n' '-'
 }
 
-readonly new_post_file="_posts/$(date +'%F')-$(slugify "$post_title").markdown"
+readonly new_post_file="$new_post_dir/$(date +'%F')-$(slugify "$post_title").markdown"
 
 echo "---
 layout: post

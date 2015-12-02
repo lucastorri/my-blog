@@ -6,7 +6,6 @@ bundle install
 
 gem-exec jekyll build
 gem-exec s3_website push
-gem-exec jekyll algolia push
 
 readonly blog_url=`ruby -e "require 'yaml'; print YAML.load(File.open('_config.yml'))['url']"`
 echo "New version deployed to $blog_url"

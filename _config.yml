@@ -18,7 +18,3 @@ exclude: [vendor, Gemfile*]
 # Output
 permalink: /:year/:month/:day/:title.html
 
-# Index
-algolia:
-  application_id: "1T1R4DS24U"
-  index_name: "unstablebuild"

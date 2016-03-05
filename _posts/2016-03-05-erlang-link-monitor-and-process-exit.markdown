@@ -117,7 +117,7 @@ One last thing is that you can force a process to be killed by sending the `:kil
 {i, ref} = spawn_monitor(inner)
 # inner start #PID<0.198.0>
 # {#PID<0.198.0>, #Reference<0.0.1.44>}
-# {o, ref} = spawn_monitor(fn -> outer.(i) end)
+{o, ref} = spawn_monitor(fn -> outer.(i) end)
 # outer start #PID<0.200.0>
 # outer wait
 # {#PID<0.200.0>, #Reference<0.0.1.49>}

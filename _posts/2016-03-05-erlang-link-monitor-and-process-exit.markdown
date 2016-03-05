@@ -103,7 +103,7 @@ end
 # {#PID<0.187.0>, #Reference<0.0.1.2>}
 # outer message {:EXIT, #PID<0.185.0>, :err}
 # outer stop
-# flush
+flush
 # {:DOWN, #Reference<0.0.4.302>, :process, #PID<0.185.0>, :err}
 # {:DOWN, #Reference<0.0.1.2>, :process, #PID<0.187.0>, :normal}
 # :ok

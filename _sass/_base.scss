@@ -204,3 +204,26 @@ pre {
         }
     }
 }
+
+
+
+/**
+ * Custom
+ */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #cbcbcb;
+}
+
+th {
+    background-color: #e0e0e0;
+    padding: 0.5em 1em;
+    border: 1px solid #cbcbcb;
+}
+
+td {
+    padding: 0.5em 1em;
+    border: 1px solid #cbcbcb;
+}

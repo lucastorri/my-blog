@@ -3,6 +3,8 @@ GEM
   specs:
     addressable (2.3.8)
     backports (3.6.7)
+    classifier-reborn (2.0.4)
+      fast-stemmer (~> 1.0)
     coderay (1.1.0)
     colorator (0.1)
     colored (1.2)
@@ -16,6 +18,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
+    fast-stemmer (1.0.2)
     ffi (1.9.10)
     gh (0.14.0)
       addressable
@@ -91,6 +94,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  classifier-reborn (~> 2.0.4)
   jekyll (~> 3.0.0)
   s3_website (~> 2.12.2)
   travis (~> 1.8.0)

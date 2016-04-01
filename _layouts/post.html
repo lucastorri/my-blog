@@ -12,6 +12,19 @@ layout: default
     {{ content }}
   </div>
 
+  <hr/>
+
+  <div>
+    <h3>Related Posts</h3>
+    <ul>
+      {% for post in site.related_posts %}
+      <li>
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
   <div id="disqus_thread">
   </div>
   <script>

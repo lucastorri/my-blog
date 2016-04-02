@@ -1,6 +1,8 @@
 language: ruby
 rvm: 2.2.3
 script: "./_scripts/deploy"
+git:
+  submodules: false
 env:
   global:
   - secure: smK4AmG6CDlTppvCM7HGPvRxgdjIn6MN916ITG20Ug5WFvj+QPk5m0Ygp8TW/LrrAD22dbLp5Y8a1yR+t2d0T7TqYC984utHtt9lRspszDAcyUTYZ85CZxUW1iR01SXU3C4xAgU9egdQN75Fv7eg7pVHAEjmsG1aDUHaJW5MIgZNBg7tn2DKXjkJxNL5jPy+q4E0gc7RbWAfNJaGrGghSaR/HN7AQOX0mbfTmxHF3FFHW+kSULNMgzTLMHMM1TEvCt2gf+p714o80a8a7a9n8NxYeGdPm7Zmrty9AbMOI2vksj5bdqyTW1Nz+WJkLqKIUz/ddAfROgltyRaoJzbUa6H+ZgTS5T0tmuPBbPmVcM+XM4cbjKsTkEuCGBK4sZZkhQtE4n1HU0H9ORnYnFF8iB52MtpYr+UIeR2qeyAFbOsWcgdoDCYuT+87hAXSWNiOQOWPHADWrFtRfM05qtLZm2KKKGgGidlPtwip5uNrS3vdC+vfEB9qFiE+HhniVKjtyo7++yRI22rD5G/az7WfQU4ktDFSo05Omn9crTnOsd84hq8hgvDMAX3FtBTHs14GdDP5Lzi/Ghk/+GoXXNMgB15LCexZwwpWa/Qdtwly4m02/cC+XepjQ9DpNpebZXbPaLiS6bds+0TAQP4q5ul8G3iRhSeFcY6RPp8vsBFxjm4=

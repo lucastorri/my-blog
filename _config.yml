@@ -3,7 +3,7 @@
 title: Unstable Build
 email: lucastorri@gmail.com
 description: >
-  Just a place to record my learnings, nothing fancy.
+  A place to record my learnings.
 baseurl: ""
 url: "http://www.unstablebuild.com"
 twitter_username: lucastorri
@@ -17,4 +17,8 @@ exclude: [vendor, Gemfile*]
 
 # Output
 permalink: /:year/:month/:day/:title.html
+
+# Plugins
+gems:
+  - jekyll-sitemap
 

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="googlebot" content="noindex, nofollow">
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-git.js"></script>
+
+        <style type="text/css">
+            body {
+                margin: 0px;
+                background: #fff;
+            }
+            #header {
+                height: 60px;
+                position: fixed;
+                background: #4679bd;
+                border: 1px solid #CCC;
+                width: 100%;
+                margin: 0px;
+                top: 0px;
+            }
+            #logo {
+                display: block;
+                color: #fff;
+                padding: 0 20px;
+                font-family: "Arial";
+                font-size: 32px;
+                margin: 10px;
+            }
+            #content {
+                background: #eee;
+                font-family:"Lucida Console";
+                width: 100%;
+                padding: 10px;
+                margin-top: 55px;
+            }
+        </style>
+
+        <title>Scrolling Header</title>
+
+
+        <script type='text/javascript'>//<![CDATA[
+            $(window).on('load', function() {
+            function hideOnScroll(e) {
+                /* How many times the element height needs to be
+                 * scrolled down in order to start hiding it. The
+                 * higher it is, the longer you'll need to scroll
+                 * to it start disappearing */
+                var heightFactor = 3;
+
+                var position;
+                var height;
+
+                var current = function() {
+                    return $(window).scrollTop();
+                };
+
+                function init() {
+                    position = current();
+                    height = $(e).height();
+                    return waitingScroll;
+                }
+
+                var state = init;
+                var moved = 0;
+
+                function waitingScroll() {
+                    var newPosition = current();
+                    if (newPosition - position > (heightFactor * height) || (moved !== 0 && newPosition > position)) {
+                        position = newPosition;
+                        return scrollingDown;
+                    } else if (position - newPosition > height) {
+                        position = newPosition;
+                        return scrollingUp;
+                    }
+                }
+
+                function scrollingDown() {
+                    var newPosition = current();
+                    if (newPosition < position) {
+                        return waitingScroll;
+                    }
+
+                    var diff = newPosition - position;
+                    if (moved < height) {
+                        if (moved + diff > height) {
+                            diff = height - moved;
+                        }
+                        $(e).css({
+                            marginTop: '-=' + diff + 'px'
+                        });
+                        moved += diff;
+                    }
+
+                    position = newPosition;
+                }
+
+                function scrollingUp() {
+                    var newPosition = current();
+                    if (newPosition > position) {
+                        return waitingScroll;
+                    }
+
+                    var diff = position - newPosition;
+                    if (moved >= 0) {
+                        if (moved - diff < 0) {
+                            diff = moved;
+                        }
+                        $(e).css({
+                            marginTop: '+=' + diff + 'px'
+                        });
+                        moved -= diff;
+                    }
+
+                    position = newPosition;
+                }
+
+                $(window).scroll(function () {
+                    state = state() || state;
+                });
+            }
+
+            hideOnScroll(document.getElementById('header'));
+
+            function fakeContent(e, count) {
+                for (var i = 1; i <= count; i++) {
+                    var p = document.createElement('p');
+                    p.textContent = '' + i;
+                    e.appendChild(p);
+                }
+            }
+
+            fakeContent(document.getElementById('content'), 100);
+            });
+        //]]>
+        </script>
+
+    </head>
+
+    <body>
+        <div id="header">
+            <span id="logo">HEADER</span>
+            </div><div id="content">
+        </div>
+    </body>
+
+</html>
+

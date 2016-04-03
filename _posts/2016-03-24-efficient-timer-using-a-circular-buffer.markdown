@@ -84,3 +84,7 @@ But to be honest, parallelism is a tricky world which I know very little, and I'
 For instance, when you have a variable that is modified by different threads in Java, you might use the [*volatile* keyword](http://www.javamex.com/tutorials/synchronization_volatile.shtml) to let the compiler know about that. *volatile* makes reads and writes to that variable to pass through "main memory", instead of the thread cache, meaning that changes are always visible between threads.
 
 As long as the [specification goes](https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.4), volatile works for fields only, and arrays are not treated any differently. Perhaps [*AtomicReferenceArray*](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/atomic/AtomicReferenceArray.html) would do the trick here...
+
+&nbsp;
+
+**Update**: the Scala file can also be obtained [here](/downloads/2016-03-24-efficient-timer-using-a-circular-buffer/TimerWheel.scala).

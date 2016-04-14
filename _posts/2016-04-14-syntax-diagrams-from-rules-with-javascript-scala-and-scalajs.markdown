@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Syntax Diagrams from Rules, with Javascript, Scala, and Scala.js"
-date: 2016-04-14 17:44:09 +0200
+date: 2016-04-14 13:44:09 +0200
 categories: update
 ---
 

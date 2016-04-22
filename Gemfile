@@ -5,4 +5,5 @@ gem 's3_website', '~> 2.12.2'
 gem 'travis', '~> 1.8.0'
 gem 'classifier-reborn', '~> 2.0.4'
 gem 'jekyll-sitemap', '~> 0.10.0'
+gem 'jekyll-minifier', '~> 0.0.6'
 

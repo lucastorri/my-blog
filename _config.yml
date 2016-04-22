@@ -21,4 +21,5 @@ permalink: /:year/:month/:day/:title.html
 # Plugins
 gems:
   - jekyll-sitemap
+  - jekyll-minifier
 

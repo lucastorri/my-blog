@@ -2,3 +2,5 @@ s3_id: <%= ENV['S3_KEY'] %>
 s3_secret: <%= ENV['S3_SECRET'] %>
 s3_bucket: www.unstablebuild.com
 s3_endpoint: eu-west-1
+max_age: 1800
+gzip: true

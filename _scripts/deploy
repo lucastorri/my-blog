@@ -5,7 +5,7 @@ source "`dirname "$0"`/_settings"
 bundle install
 
 gem-exec jekyll build --lsi
-gem-exec s3_website push
+gem-exec s3_website push --force
 
 readonly blog_url=`ruby -e "require 'yaml'; print YAML.load(File.open('_config.yml'))['url']"`
 echo "New version deployed to $blog_url"

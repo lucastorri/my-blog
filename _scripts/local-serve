@@ -3,5 +3,6 @@
 source "`dirname "$0"`/_settings"
 
 gem-exec jekyll serve \
+    --incremental \
     --drafts \
     --future

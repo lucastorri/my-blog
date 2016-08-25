@@ -42,4 +42,4 @@ git log --graph --pretty=format:'%C(yellow)%h %Cblue%aN %Cgreen%ar %Creset%s'
 
 Enough with the bashing...
 
-On a next post I will write about a possible alternative to *BpE*.
+On a [next post]({% post_url 2016-08-21-trunk-based-development-with-multiple-services %}) I will write about a possible alternative to *BpE*.

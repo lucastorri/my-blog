@@ -57,6 +57,8 @@ To give an example, consider the step-by-step scenario below, where each segment
 
 Moreover, the last good set of versions could be tracked, so even if staging is broken, we can use the latest known good set.
 
+On my [next post]({% post_url 2016-08-23-services-version-lock-with-docker-and-jenkins %}) I'll demonstrate how to apply this idea by using Docker containers.
+
 
 ### Other References
 

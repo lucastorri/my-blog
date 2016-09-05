@@ -5,7 +5,7 @@ date: 2016-09-05 20:33:40 +0200
 categories: update
 ---
 
-Java and Scala are full of configuration libraries, From the standard basic [Properties](https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html), to more advanced ones like [Commons Configuration](https://commons.apache.org/proper/commons-configuration/) or Typesafe's [Config](https://github.com/typesafehub/config).
+Java and Scala have plenty of configuration libraries available, from the standard basic [Properties](https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html), to more advanced ones like [Commons Configuration](https://commons.apache.org/proper/commons-configuration/) or Typesafe's [Config](https://github.com/typesafehub/config).
 
 In general, though, I prefer to have an interface to define settings for different parts of my system, and have these libraries do their work behind the scenes.  For instance, if I have a class that acts as a client to another system (HTTP), I might have one settings class that can return the base URL, timeout, number of retries, etc. This helps on refactoring my code, finding usages of the values with an IDE, but also decouples details about how my settings files are organized. Unfortunately, there is a cost involved, even though small, of writing these classes.
 

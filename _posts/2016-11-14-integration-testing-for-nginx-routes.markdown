@@ -24,7 +24,7 @@ server {
 {% endraw %}
 {% endhighlight %}
 
-Parts that look like `{{ key }}` represent some string that will be replaced by a configuration management tool. That way we can dynamically configure some of the behavior, let's say, different DNS names for different environments (staging, production).
+Parts that look like `{% raw %}{{ key }}{% endraw %}` represent some string that will be replaced by a configuration management tool. That way we can dynamically configure some of the behavior, let's say, different DNS names for different environments (staging, production).
 
 On the previous configuration file, we are opening the server on port 7000.
 

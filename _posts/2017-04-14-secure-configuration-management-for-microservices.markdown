@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Secure Configuration Management for Microservices"
-date: 2017-04-14 19:41:11 +0100
+date: 2017-04-14 10:41:11 +0100
 categories: update
 ---
 

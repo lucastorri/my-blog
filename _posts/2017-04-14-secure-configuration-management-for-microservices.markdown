@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Secure Password Management"
-date: 2017-04-13 19:41:11 +0100
+title: "Secure Configuration Management for Microservices"
+date: 2017-04-14 19:41:11 +0100
 categories: update
 ---
 
@@ -68,7 +68,7 @@ Different mechanisms are used to feed the values into the services instances. Fo
 In sum, the flow of the configuration values, from user edited files to the according services, would look like the following:
 
 <center>
-  <img src="/assets/2017-04-13-secure-password-management/services_config_stream.jpeg" alt="Configuration values flow"></img>
+  <img src="/assets/2017-04-14-secure-configuration-management-for-microservices/services_config_stream.jpeg" alt="Configuration values flow"></img>
 </center>
 <br/>
 
